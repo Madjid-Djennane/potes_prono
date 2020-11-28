@@ -1,16 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Input, Button } from '../../styles/style'
+/*import { Flex_row_space_between } from '../../styles/felx-style'*/
+import COLORS from '../../styles/color'
+
 
 const Signin = () => {
   return (
-    <StyledForm>
+      <StyledForm>
       <StyledSpan>Connexion</StyledSpan>
-      <SigninInput placeholder='Username' type='text'></SigninInput>
-      <SigninInput placeholder='Password' type='password'></SigninInput>
-      <SigninInput type='submit'></SigninInput>
+      <Input placeholder='Username' type='text'></Input>
+      <Input placeholder='Password' type='password'></Input>
+      <br></br>
+      <Button color={COLORS.btn_bg}>Click</Button>
+
     </StyledForm>
+
   )
 }
+
+
+
 
 const StyledSpan = styled.span`
 font-size: 25px;
@@ -30,15 +40,9 @@ const StyledForm = styled.form`
   background: #05B7DD;
   border-radius: 15px;
   box-shadow:  10px 15px 20px rgba(0,0,0,0.1);
-  margin: 100px 500px 100px 500px;
+  margin: 100px 600px 100px 600px;
   height: 400px;
 `
 
-const SigninInput = styled.input`
-margin: 6px 0px;
-border-radius: 12px;
-height: 35px;
-color: #278F81;
-border:none;
-`
+
 export default Signin;

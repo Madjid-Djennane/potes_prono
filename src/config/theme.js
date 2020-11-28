@@ -1,5 +1,5 @@
 const theme = {
-  primary: 'blue'
+  primary: '#112520'
 }
 
 export { theme }

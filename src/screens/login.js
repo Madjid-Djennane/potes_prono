@@ -1,10 +1,11 @@
 import React from 'react'
 
 import Signin from '../components/signin'
+import { theme } from '../config/theme'
 
 const Login = () => {
   return(
-    <div>
+    <div theme={theme}>
       <Signin></Signin>
     </div>
   )
