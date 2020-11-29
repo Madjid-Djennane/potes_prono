@@ -1,6 +1,6 @@
 {
   "translation":{
-    "menu": "Menu",
-    "utilisateur":"Utilisateur"
+    "utilisateur":"Utilisateur",
+    "notFound":"Page introuvable"
   }
 }

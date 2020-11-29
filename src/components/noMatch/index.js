@@ -8,7 +8,7 @@ const NoMatch = () => {
   return (
     <div>
       <h2>
-        404 - <code>{location.pathname}</code> Not found
+        404 - <code>{location.pathname}</code> {i18n.t('notFound')}
       </h2>
   <p>{i18n.t('utilisateur')}</p>
   <p>test</p>
