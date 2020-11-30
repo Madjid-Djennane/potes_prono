@@ -15,8 +15,14 @@ const check = () => {
     .catch(err => console.log(err))
 }
 
+import {useTranslation} from 'react-i18next'
+//import '../../src/App.css'
+
+
 const home = () => {
+  const { t, i18n }= useTranslation()
   return (
+
     <Flex_row_center>
       {/* <div>Home</div>
       <Input type='text' /> */}
