@@ -1,13 +1,15 @@
 import React from 'react'
 import './App.css'
 import Routes from './config/router'
+//import Header from '../src/components/header'
 
 import {Provider} from 'react-redux'
 import {store} from './config/store'
 
 function App() {
-  <Provider store ={store}>
-  return <Routes></Routes>
+  //<Provider store ={store}>
+  return<Provider store ={store}> 
+  <Routes></Routes>
   </Provider>
 }
 
