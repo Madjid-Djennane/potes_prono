@@ -41,6 +41,7 @@ const Home = () => {
         </div>
       ))}
     </Flex_col>
+
   )
 }
 
