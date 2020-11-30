@@ -45,14 +45,6 @@ const submit = (event, loginState, setErrMessage, history) => {
 }
 
 const Login = () => {
-  /* const history = useHistory()
-  useEffect(() => {
-    console.log('use effect')
-    const token = localStorage.getItem('userToken')
-    if (token) {
-      history.push('/home')
-    }
-  }, []) */
   return (
     <div theme={theme}>
       <Signin submit={submit}></Signin>
