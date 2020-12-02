@@ -1,10 +1,6 @@
-import {combineReducers} from 'redux'
-
-import score from './scores'
-
-import config from './config_reducer';
+import { combineReducers } from 'redux'
+import config from './config_reducer'
 
 export default combineReducers({
-  score,
   config
 })

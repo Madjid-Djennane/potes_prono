@@ -51,20 +51,18 @@ const Login = () => {
     </div>
   )
 }*/
-import React, { useEffect } from 'react';
-import '../App.css';
-
-import lightTheme from "../theme/light";
-import darkTheme from "../theme/dark";
-import Container from "../theme/components/Container"
-import { ThemeProvider } from "styled-components";
-import { darkModeAction } from '../actions/config_action';
+import React, { useEffect } from 'react'
+import '../App.css'
+import lightTheme from '../theme/light'
+import darkTheme from '../theme/dark'
+import Container from '../theme/components/Container'
+import { ThemeProvider } from 'styled-components'
+import { darkModeAction } from '../actions/config_action'
 import Signin from '../components/signin'
 import { theme } from '../config/theme'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux'
 import Header from '../components/header'
 
 export const submit = (event, loginState, setErrMessage, history) => {
@@ -107,7 +105,7 @@ export const submit = (event, loginState, setErrMessage, history) => {
 }
 
 const Login = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const config = useSelector(state => state.config)
 
   useEffect(() => {
@@ -115,21 +113,15 @@ const Login = () => {
       dispatch(darkModeAction(window.localStorage.getItem('theme')))
     }
   }, [config.darkMode, dispatch])
-
-
-
   return (
-    <ThemeProvider theme={config.darkMode === "light" ? lightTheme : darkTheme}>
-<Header></Header>
-
-      <Container >
-      <div theme={theme}>
-      <Signin submit={submit}></Signin>
-    </div>
+    <ThemeProvider theme={config.darkMode === 'light' ? lightTheme : darkTheme}>
+      <Header></Header>
+      <Container>
+        <div theme={theme}>
+          <Signin submit={submit}></Signin>
+        </div>
       </Container>
     </ThemeProvider>
-  );
+  )
 }
-
-
 export default Login
