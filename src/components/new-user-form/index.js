@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Input, FormButton, Form, H1 } from '../../styles/style'
-import { Flex_col_center, Flex_row_center } from '../../styles/felx-style'
+import { Flex_col_center, Flex_row_center } from '../../styles/flex-style'
 import COLORS from '../../styles/color'
 import { useHistory } from 'react-router-dom'
 
@@ -17,7 +17,7 @@ const NewUserForm = ({ submit }) => {
   const history = useHistory()
 
   return (
-    <Flex_col_center>
+    <Flex_col_center height='85vh'>
       <Flex_row_center>
         <Form onSubmit={e => submit(e, newUserState, setErrMessage, history)}>
           <H1>Créer un compte</H1>

@@ -1,47 +1,43 @@
 import React, { useEffect, useState } from 'react'
-import {
-  Flex_col,
-  Flex_col_space_between,
-  Flex_row_space_between
-} from '../styles/felx-style'
-import axios from 'axios'
-import Team from '../components/team'
+import { Flex_col } from '../styles/flex-style'
+import Game from '../components/game'
+import { useDispatch, useSelector } from 'react-redux'
+import { getWeekGames } from '../actions/weekGames'
+import { initBet } from '../actions/bet'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
-  const [weekBets, setWeekBets] = useState({})
+  const [_weekGames, _setWeekGames] = useState({})
+  const dispatch = useDispatch()
+  const weekGames = useSelector(state => state.weekGames.weekGamesValue)
 
   useEffect(() => {
-    axios({
-      method: 'GET',
-      url: 'http://localhost:3003/api/v1/weekBets/current'
-    })
-      .then(res => {
-        setWeekBets(res.data.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    dispatch(getWeekGames())
   }, [])
 
   useEffect(() => {
-    console.log(weekBets)
-  }, [weekBets])
+    _setWeekGames(weekGames)
+    // initialiser tous les matches a 0 (matche nul)
+    const bets = weekGames.gamesList?.map(g => ({
+      game: g._id,
+      user_bet: 0
+    }))
+    const initialBet = {
+      weekGames: weekGames._id,
+      bets: bets
+    }
+    dispatch(initBet(initialBet))
+  }, [weekGames])
 
   return (
     <Flex_col>
-      {weekBets.gamesList?.map(weekBet => (
-        <div key={weekBet._id}>
-          <Flex_col_space_between>
-            <Flex_row_space_between>
-              <Team data={weekBet.firstTeam}></Team>
-              <Team data={weekBet.secondTeam}></Team>
-            </Flex_row_space_between>
-            <hr></hr>
-          </Flex_col_space_between>
+      {_weekGames.gamesList?.map(_game => (
+        <div key={_game._id}>
+          <Game game={_game}></Game>
         </div>
       ))}
+      <Link to='/test'>to test</Link>
     </Flex_col>
-
   )
 }
 

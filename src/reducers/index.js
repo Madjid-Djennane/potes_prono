@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux'
-import config from './config_reducer'
+
+import weekGames from './weekGames'
+import bet from './bet'
 
 export default combineReducers({
-  config
+  weekGames,
+  bet
 })

@@ -81,4 +81,15 @@ const H1 = styled.h1`
   text-align: center;
 `
 
-export { Input, Button, FormButton, Form, H1 }
+const Radio = styled.input`
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0px 0px 0px 10px;
+
+  @media (max-width: 768px) {
+    width: 1.5em;
+    height: 1.5em;
+  }
+`
+
+export { Input, Button, FormButton, Form, H1, Radio }
