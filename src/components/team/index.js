@@ -29,11 +29,8 @@ const TeamStyle = styled.div`
   position: relative;
   top: 0;
 
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   height: 230px;
-  margin: 20px;
 
   @media (max-width: 768px) {
     height: 160px;
