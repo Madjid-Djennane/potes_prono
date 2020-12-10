@@ -4,18 +4,20 @@ import { Input, FormButton, Form, H1 } from '../../styles/style'
 import { Flex_col_center, Flex_row_center } from '../../styles/flex-style'
 import COLORS from '../../styles/color'
 import { useHistory, Link } from 'react-router-dom'
+import {useTranslation} from 'react-i18next'
 
 const Signin = ({ submit }) => {
   const [loginState, setLoginState] = useState({ email: '', password: '' })
   const [errMessage, setErrMessage] = useState('')
 
   const history = useHistory()
+  const { t }= useTranslation()
 
   return (
     <Flex_col_center height='85vh'>
       <Flex_row_center>
         <Form onSubmit={e => submit(e, loginState, setErrMessage, history)}>
-          <H1>Se connecter</H1>
+          <H1>{t('signIn')}</H1>
           <Input
             type='text'
             placeholder='Email'

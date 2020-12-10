@@ -1,9 +1,10 @@
 import React from 'react'
+import '../App.css'
+import Signin from '../components/signin'
+import { theme } from '../config/theme'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
-import Signin from '../components/signin'
-import { theme } from '../config/theme'
 
 const submit = (event, loginState, setErrMessage, history) => {
   event.preventDefault()
@@ -45,11 +46,13 @@ const submit = (event, loginState, setErrMessage, history) => {
 }
 
 const Login = () => {
-  // localStorage.removeItem('userToken')
+
   return (
-    <div theme={theme}>
-      <Signin submit={submit}></Signin>
-    </div>
+
+        <div theme={theme}>
+          <Signin submit={submit}></Signin>
+        </div>
+
   )
 }
 
