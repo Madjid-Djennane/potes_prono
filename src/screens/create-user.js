@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import NewUserForm from '../components/new-user-form'
 import axios from 'axios'
@@ -35,7 +36,6 @@ const submit = (event, newUserState, setErrMessage, history) => {
     }
   })
     .then(res => {
-      console.log(res)
       Swal.fire({
         icon: 'success',
         title: 'Success',
@@ -45,7 +45,6 @@ const submit = (event, newUserState, setErrMessage, history) => {
       })
     })
     .catch(err => {
-      console.log(err)
       Swal.fire({
         icon: 'error',
         title: 'Erreur',

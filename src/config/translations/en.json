@@ -1,7 +1,6 @@
 {
   "translation":{
     "utilisateur":"User",
-    "notFound":"Not found",
-    "signIn":"Sign in"
+    "notFound":"Not found"
   }
 }

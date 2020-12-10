@@ -4,9 +4,15 @@ import { Flex_row_space_between } from '../../styles/flex-style'
 import PropTypes from 'prop-types'
 import Team from '../team'
 import Bet from '../bet'
+import BetResults from '../betResult'
+import { useSelector } from 'react-redux'
 
 const Game = props => {
-  return (
+  const weekGamesStatus = useSelector(
+    state => state.weekGames.weekGamesValue.status
+  )
+
+  return weekGamesStatus === 'pending' ? (
     <GameStyle>
       <Flex_row_space_between width='50vw'>
         <Team data={props.game.firstTeam}></Team>
@@ -14,6 +20,15 @@ const Game = props => {
         <Team data={props.game.secondTeam}></Team>
       </Flex_row_space_between>
       <Bet game={props.game}></Bet>
+    </GameStyle>
+  ) : (
+    <GameStyle>
+      <Flex_row_space_between width='50vw'>
+        <Team data={props.game.firstTeam}></Team>
+        <Vs>VS</Vs>
+        <Team data={props.game.secondTeam}></Team>
+      </Flex_row_space_between>
+      <BetResults game={props.game}></BetResults>
     </GameStyle>
   )
 }

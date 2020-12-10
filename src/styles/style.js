@@ -92,4 +92,45 @@ const Radio = styled.input`
   }
 `
 
-export { Input, Button, FormButton, Form, H1, Radio }
+const Title = styled.p`
+  font-size: 65px;
+  font-weight: bold;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
+`
+
+const BetStyle = styled.div`
+  width: 250px;
+  background: white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100%;
+  border-radius: 5%;
+  position: relative;
+  top: 0;
+
+  @media (max-width: 768px) {
+    margin-top: 10px;
+    flex-direction: row;
+    width: 100%;
+  }
+`
+
+export { Input, Button, FormButton, Form, H1, Radio, Title, BetStyle }
