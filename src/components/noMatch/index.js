@@ -10,7 +10,7 @@ const NoMatch = () => {
         404 - <code>{location.pathname}</code> {i18n.t('notFound')}
       </h2>
       <p>{i18n.t('utilisateur')}</p>
-      <Link to='/'>to Home</Link>
+      <Link to='/home'>to Home</Link>
     </div>
   )
 }

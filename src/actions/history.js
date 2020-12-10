@@ -1,8 +1,8 @@
-export const SET_WEEK_GAMES = 'SET_WEEK_GAMES'
+export const SET_HISTORY = 'SET_HISTORY'
 import axios from 'axios'
 
-export const setWeekGames = value => ({
-  type: SET_WEEK_GAMES,
+export const setHistory = value => ({
+  type: SET_HISTORY,
   payload: value
 })
 
@@ -17,13 +17,13 @@ axios.interceptors.request.use(
   }
 )
 // eslint-disable-next-line no-unused-vars
-export const getWeekGames = () => dispatch => {
+export const getHistory = () => dispatch => {
   axios({
     method: 'GET',
-    url: 'http://localhost:3003/api/v1/weekBets/current'
+    url: 'http://localhost:3003/api/v1/weekBets/all'
   })
     .then(res => {
-      dispatch(setWeekGames(res.data.data))
+      dispatch(setHistory(res.data.data))
     })
     .catch(err => {
       console.warn(err)

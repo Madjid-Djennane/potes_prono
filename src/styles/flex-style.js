@@ -22,6 +22,7 @@ const Flex_col_center = styled.div`
 const Flex_row_center = styled.div`
   display: flex;
   justify-content: center;
+  min-height: ${props => props.height};
 `
 const Flex_col_space_between = styled.div`
   display: flex;

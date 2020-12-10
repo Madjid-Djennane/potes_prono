@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Flex_col } from '../styles/flex-style'
-import Game from '../components/game'
+import NoBets from '../components/noBets'
 import { useDispatch, useSelector } from 'react-redux'
 import { getWeekGames } from '../actions/weekGames'
 import { initBet } from '../actions/bet'
-import { Link } from 'react-router-dom'
+import WeekBet from '../components/weekBet'
 
 const Home = () => {
+  // eslint-disable-next-line no-unused-vars
   const [_weekGames, _setWeekGames] = useState({})
   const dispatch = useDispatch()
   const weekGames = useSelector(state => state.weekGames.weekGamesValue)
@@ -29,15 +29,10 @@ const Home = () => {
     dispatch(initBet(initialBet))
   }, [weekGames])
 
-  return (
-    <Flex_col>
-      {_weekGames.gamesList?.map(_game => (
-        <div key={_game._id}>
-          <Game game={_game}></Game>
-        </div>
-      ))}
-      <Link to='/test'>to test</Link>
-    </Flex_col>
+  return weekGames.status !== 'noWeekBet' ? (
+    <WeekBet weekGames={weekGames}></WeekBet>
+  ) : (
+    <NoBets></NoBets>
   )
 }
 
