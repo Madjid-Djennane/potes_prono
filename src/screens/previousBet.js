@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import WeekBet from '../components/weekBet'
+import PreviousWeekBet from '../components/previousWeekBet'
 
 const previousBet = () => {
   const location = useLocation()
@@ -10,7 +10,7 @@ const previousBet = () => {
     hb => hb._id === weekBetId
   )
 
-  return <WeekBet weekGames={historyBet}></WeekBet>
+  return <PreviousWeekBet weekGames={historyBet}></PreviousWeekBet>
 }
 
 export default previousBet

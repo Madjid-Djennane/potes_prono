@@ -1,6 +1,33 @@
 {
   "translation":{
-    "utilisateur":"Utilisateur",
-    "notFound":"Page introuvable"
+    "utilisateur": "Utilisateur",
+    "notFound": "Page introuvable",
+    "signIn": "Se connecter",
+    "logIn": "Se connecter",
+    "signUp": "Créer un compte",
+    "notEmpty": "les champs ne doivent pas être vide !",
+    "invalidEmail": "Email invalide !",
+    "minPass": "Le mot de passe doit contenir au moins 6 caractères !",
+    "diffPass": "Mots de passe différents !",
+    "created": "Compte crée !",
+    "errorOcc": "Une erreur est survenue !",
+    "error": "Erreur",
+    "previousBets": "Vos précédents paris",
+    "betOf": "Pari du ",
+    "noBet": "Aucun pari disponible pour le moment !",
+    "create": "Créer un compte",
+    "home": "Accueil",
+    "history": "Historique",
+    "send": "Envoyer",
+    "score": "Score du match :",
+    "betResult": "Résultat du pari :",
+    "startDate": "Date début",
+    "endDate": "Date fin",
+    "betOpen": "Les paris sont ouverts",
+    "lastBet": "Les résultats du dernier pari",
+    "won": "Gagné",
+    "lost": "Perdu",
+    "alreadyBet": "Vous avez déjà parier cette semaine !",
+    "betTaken": "Votre pari a bien été pris en compte !"
   }
 }

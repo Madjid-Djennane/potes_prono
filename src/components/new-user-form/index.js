@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Input, FormButton, Form, H1 } from '../../styles/style'
+import { Input, FormButton, Form, H1, ErrMsg } from '../../styles/style'
 import { Flex_col_center, Flex_row_center } from '../../styles/flex-style'
 import COLORS from '../../styles/color'
 import { useHistory } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const NewUserForm = ({ submit }) => {
   const [newUserState, setNewUserState] = useState({
@@ -15,12 +16,15 @@ const NewUserForm = ({ submit }) => {
   const [errMessage, setErrMessage] = useState('')
 
   const history = useHistory()
+  const { t } = useTranslation()
 
   return (
     <Flex_col_center height='85vh'>
       <Flex_row_center>
-        <Form onSubmit={e => submit(e, newUserState, setErrMessage, history)}>
-          <H1>Créer un compte</H1>
+        <Form
+          onSubmit={e => submit(e, newUserState, setErrMessage, history, t)}
+        >
+          <H1>{t('create')}</H1>
           <Input
             type='text'
             placeholder='Username'
@@ -52,8 +56,8 @@ const NewUserForm = ({ submit }) => {
               })
             }
           />
-          <p>{errMessage}</p>
-          <FormButton color={COLORS.btn_blue_royal}>Créer un compte</FormButton>
+          <ErrMsg>{errMessage}</ErrMsg>
+          <FormButton color={COLORS.btn_blue_royal}>{t('create')}</FormButton>
         </Form>
       </Flex_row_center>
     </Flex_col_center>

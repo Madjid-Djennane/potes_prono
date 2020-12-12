@@ -58,11 +58,11 @@ const Vs = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 50px;
+  font-size: 30px;
   font-family: attack;
 
   @media (max-width: 1070) {
-    font-size: 50px;
+    font-size: 20px;
   }
 `
 

@@ -1,16 +1,15 @@
 import React from 'react'
-import { useLocation, Link } from 'react-router-dom'
-import i18n from './../../config/translations'
+import { useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const NoMatch = () => {
   let location = useLocation()
+  const { t } = useTranslation()
   return (
     <div>
       <h2>
-        404 - <code>{location.pathname}</code> {i18n.t('notFound')}
+        404 - <code>{location.pathname}</code> {t('notFound')}
       </h2>
-      <p>{i18n.t('utilisateur')}</p>
-      <Link to='/home'>to Home</Link>
     </div>
   )
 }

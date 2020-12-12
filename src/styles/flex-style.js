@@ -42,6 +42,12 @@ const Flex_row_space_between = styled.div`
 const Flex_row_space_around = styled.div`
   display: flex;
   justify-content: space-around;
+  width: ${props => props.width};
+`
+const Flex_col_space_around = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `
 
 export {
@@ -51,5 +57,6 @@ export {
   Flex_row_center,
   Flex_col_space_between,
   Flex_row_space_between,
+  Flex_col_space_around,
   Flex_row_space_around
 }
