@@ -2,8 +2,13 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Flex_col_center } from '../../styles/flex-style'
+import {
+  Flex_col_center,
+  Flex_col_space_around,
+  Flex_row_center
+} from '../../styles/flex-style'
 import { useHistory } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const AntWeekBets = props => {
   const historyBet = useSelector(state => state.history.historyValue).find(
@@ -11,7 +16,7 @@ const AntWeekBets = props => {
   )
   const betsWon = historyBet.gamesList.filter(game => game.win).length
   const history = useHistory()
-
+  const { t } = useTranslation()
   return (
     <WeekBetStyle
       onClick={() =>
@@ -35,6 +40,22 @@ const AntWeekBets = props => {
           {betsWon} / 14
         </Score>
       </Flex_col_center>
+      <Flex_col_space_around>
+        <div>
+          <Flex_row_center>
+            <P>{t('startDate')}</P>
+          </Flex_row_center>
+
+          <Flex_row_center>{historyBet.startDate.slice(0, 10)}</Flex_row_center>
+        </div>
+        <div>
+          <Flex_row_center>
+            <P>{t('endDate')}</P>
+          </Flex_row_center>
+
+          <Flex_row_center>{historyBet.endDate.slice(0, 10)}</Flex_row_center>
+        </div>
+      </Flex_col_space_around>
     </WeekBetStyle>
   )
 }
@@ -52,10 +73,11 @@ const WeekBetStyle = styled.div`
   flex-direction: row;
   min-height: 100%;
   width: 80%;
+  flex-wrap: wrap;
 
   position: relative;
   top: 0;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 35px;
 
   transition: all 0.1s ease-in;
@@ -80,6 +102,21 @@ const Score = styled.div`
   color: ${props => props.color};
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+`
+
+const P = styled.p`
+  font-size: 25px;
+  font-weight: bold;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  maring: 0;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `
 
 export default AntWeekBets

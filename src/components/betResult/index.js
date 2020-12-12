@@ -3,12 +3,14 @@ import React from 'react'
 import { BetStyle } from '../../styles/style'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { useTranslation } from 'react-i18next'
 
 const BetResults = props => {
+  const { t } = useTranslation()
   return (
     <BetStyle>
       <div>
-        <Title>Score du match: </Title>
+        <Title>{t('score')} </Title>
         <Res>
           {props.game.firstTeam.name} : {props.game.score.firstTeamRes}
         </Res>
@@ -18,9 +20,9 @@ const BetResults = props => {
       </div>
 
       <div>
-        <Title>Résulat du pari: </Title>
+        <Title>{t('betResult')} </Title>
         <Res color={props.game.win ? 'green' : 'red'}>
-          {props.game.win ? 'Gagné' : 'Perdu'}
+          {props.game.win ? t('won') : t('lost')}
         </Res>
       </div>
     </BetStyle>

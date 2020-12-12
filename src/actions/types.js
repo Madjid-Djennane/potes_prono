@@ -1,1 +1,1 @@
-export const DARK_MODE = 'dark_mode';
+export const DARK_MODE = 'dark_mode'

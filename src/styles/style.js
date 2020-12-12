@@ -95,7 +95,7 @@ const Radio = styled.input`
 const Title = styled.p`
   font-size: 65px;
   font-weight: bold;
-  color: #999;
+  /* color: #999; */
   text-transform: uppercase;
   letter-spacing: 0.05em;
 
@@ -133,4 +133,13 @@ const BetStyle = styled.div`
   }
 `
 
-export { Input, Button, FormButton, Form, H1, Radio, Title, BetStyle }
+const ErrMsg = styled.p`
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 10px 0 25px 0;
+  text-align: center;
+  font-weight: bold;
+  color: red;
+`
+
+export { Input, Button, FormButton, Form, H1, Radio, Title, BetStyle, ErrMsg }

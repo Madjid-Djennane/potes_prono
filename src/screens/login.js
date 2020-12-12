@@ -6,19 +6,19 @@ import Swal from 'sweetalert2'
 import Signin from '../components/signin'
 import { theme } from '../config/theme'
 
-const submit = (event, loginState, setErrMessage, history) => {
+const submit = (event, loginState, setErrMessage, history, t) => {
   event.preventDefault()
 
   if (!loginState.email || !loginState.password) {
-    setErrMessage('les champs ne doivent pas être vide !')
+    setErrMessage(t('notEmpty'))
     return
   }
   if (!loginState.email.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)) {
-    setErrMessage('Email invalide !')
+    setErrMessage(t('invalidEmail'))
     return
   }
   if (loginState.password.length < 6) {
-    setErrMessage('Le mot de passe doit contenir au moins 6 caractères')
+    setErrMessage(t('minPass'))
     return
   }
 
@@ -45,7 +45,7 @@ const submit = (event, loginState, setErrMessage, history) => {
 }
 
 const Login = () => {
-  // localStorage.removeItem('userToken')
+  localStorage.removeItem('userToken')
   return (
     <div theme={theme}>
       <Signin submit={submit}></Signin>

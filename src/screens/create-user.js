@@ -4,26 +4,26 @@ import NewUserForm from '../components/new-user-form'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
-const submit = (event, newUserState, setErrMessage, history) => {
+const submit = (event, newUserState, setErrMessage, history, t) => {
   event.preventDefault()
 
   if (!newUserState.email || !newUserState.password) {
-    setErrMessage('les champs ne doivent pas être vide !')
+    setErrMessage(t('notEmpty'))
     return
   }
   if (
     !newUserState.email.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)
   ) {
-    setErrMessage('Email invalide !')
+    setErrMessage(t('invalidEmail'))
     return
   }
   if (newUserState.password.length < 6) {
-    setErrMessage('Le mot de passe doit contenir au moins 6 caractères')
+    setErrMessage(t('minPass'))
     return
   }
 
   if (newUserState.password !== newUserState.confirmPassword) {
-    setErrMessage('Mots de passe différents')
+    setErrMessage(t('diffPass'))
     return
   }
   axios({

@@ -1,6 +1,33 @@
 {
   "translation":{
     "utilisateur":"User",
-    "notFound":"Not found"
+    "notFound":"Not found",
+    "signIn":"Sign in",
+    "logIn":"Login",
+    "signUp": "Sign Up",
+    "notEmpty": "fields must not be empty !",
+    "invalidEmail": "Invalid email !",
+    "minPass": "Password must contain at least 6 characters !",
+    "diffPass": "Different passwords !",
+    "created": "Account created !",
+    "errorOcc": "An error has occurred !",
+    "error": "Error",
+    "previousBets": "Your previous bets",
+    "betOf": "Bet of ",
+    "noBet": "No bet available for the moment !",
+    "create": "Create account",
+    "home": "Home",
+    "history": "History",
+    "send": "Send",
+    "score": "Game Score :",
+    "betResult": "Bet result :",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "betOpen": "The bets are open",
+    "lastBet": "The results of the last bet",
+    "won": "Won",
+    "lost": "Lost",
+    "alreadyBet": "You already bet this week!",
+    "betTaken": "Your bet has been taken into account!"
   }
 }
