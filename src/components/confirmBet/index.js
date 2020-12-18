@@ -43,7 +43,7 @@ const ConfirmBet = () => {
   const send = () => {
     axios({
       method: 'POST',
-      url: 'http://localhost:3003/api/v1/bets/',
+      url: `${process.env.REACT_APP_PROD_URI}api/v1/bets/`,
       data: userBet
     })
       .then(res => {

@@ -28,7 +28,7 @@ const submit = (event, newUserState, setErrMessage, history, t) => {
   }
   axios({
     method: 'POST',
-    url: 'http://localhost:3003/api/v1/users/new_user',
+    url: `${process.env.REACT_APP_PROD_URI}api/v1/users/new_user`,
     data: {
       username: newUserState.username,
       email: newUserState.email,

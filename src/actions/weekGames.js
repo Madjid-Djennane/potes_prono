@@ -20,7 +20,7 @@ axios.interceptors.request.use(
 export const getWeekGames = () => dispatch => {
   axios({
     method: 'GET',
-    url: 'http://localhost:3003/api/v1/weekBets/current'
+    url: `${process.env.REACT_APP_PROD_URI}api/v1/weekBets/current`
   })
     .then(res => {
       dispatch(setWeekGames(res.data.data))

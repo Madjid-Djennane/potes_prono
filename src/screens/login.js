@@ -24,7 +24,7 @@ const submit = (event, loginState, setErrMessage, history, t) => {
 
   axios({
     method: 'POST',
-    url: 'http://localhost:3003/api/v1/users/login',
+    url: `${process.env.REACT_APP_PROD_URI}api/v1/users/login`,
     data: {
       email: loginState.email,
       password: loginState.password
