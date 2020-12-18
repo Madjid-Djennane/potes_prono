@@ -23,7 +23,8 @@ export const getHistory = () => dispatch => {
     url: `${process.env.REACT_APP_PROD_URI}api/v1/weekBets/all`
   })
     .then(res => {
-      dispatch(setHistory(res.data.data))
+      const data = res.data.data.filter(wb => !!wb)
+      dispatch(setHistory(data))
     })
     .catch(err => {
       console.warn(err)
