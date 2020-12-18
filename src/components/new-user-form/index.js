@@ -19,7 +19,7 @@ const NewUserForm = ({ submit }) => {
   const { t } = useTranslation()
 
   return (
-    <Flex_col_center height='85vh'>
+    <Flex_col_center height='90vh'>
       <Flex_row_center>
         <Form
           onSubmit={e => submit(e, newUserState, setErrMessage, history, t)}
