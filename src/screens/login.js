@@ -24,7 +24,7 @@ const submit = (event, loginState, setErrMessage, history, t) => {
 
   axios({
     method: 'POST',
-    url: 'http://localhost:3003/api/v1/users/login',
+    url: 'https://agitated-tesla-4e977b.netlify.app/api/v1/users/login',
     data: {
       email: loginState.email,
       password: loginState.password
